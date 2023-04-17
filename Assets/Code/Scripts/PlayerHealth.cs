@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+	
 		if(currentHealth <= 0)
         {
 			currentHealth = 0;
@@ -35,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 			timeOfLastRadiation = Time.time;
 			playerAudioSource.PlayOneShot(radiationSoundEffect);
         }
+		healthBar.SetHealth(currentHealth);
     }
 
 	public void TakeDamage(int damage)
