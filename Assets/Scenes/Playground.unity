@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 139649999}
   - component: {fileID: 139649998}
   m_Layer: 5
-  m_Name: superPower
+  m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.08989811, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -525,7 +525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x 0
+  m_Text: x 50
 --- !u!222 &139649999
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 500
-  field of view: 30
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -747,7 +747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419018011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.672236, y: 15.074825, z: 6.7531967}
+  m_LocalPosition: {x: -8.452236, y: 15.274825, z: 5.7531967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2378,6 +2378,7 @@ GameObject:
   - component: {fileID: 1056524489}
   - component: {fileID: 1056524490}
   - component: {fileID: 1056524491}
+  - component: {fileID: 1056524493}
   - component: {fileID: 1056524492}
   m_Layer: 0
   m_Name: Terrain
@@ -2589,6 +2590,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1056524493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056524485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6553c28ab62448e596492bf34dcf62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoBox: {fileID: 8855831878722945556, guid: 464058025cf5742a291e534a95892264, type: 3}
+  landscape: {fileID: 1056524487}
 --- !u!1 &1092427199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3235,7 +3250,7 @@ GameObject:
   - component: {fileID: 1570940719}
   - component: {fileID: 1570940718}
   m_Layer: 5
-  m_Name: superPower -Image
+  m_Name: Ammo -Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3281,7 +3296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8bfec98e3d3f4390a7ec88567190ca8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 195cbc6af9cb14bee8415b65252eaf34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3804,7 +3819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.103749275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6161,6 +6176,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 244556638}
   mainMessages: {fileID: 1608456515}
   blasterSoundEffect: {fileID: 8300000, guid: fa3310877cdcd4512b0bf895e90a0d0d, type: 3}
+  emptyGunClick: {fileID: 8300000, guid: 7b71a863167d3422a8d320e3d2a61376, type: 3}
 --- !u!114 &6982812147933622149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6203,9 +6219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPacksCollected: 0
-  superPowerUp: 0
+  currentAmo: 50
   healthPackText: {fileID: 1937061074}
-  superPowerUpText: {fileID: 139649998}
+  AmmoText: {fileID: 139649998}
   equipHealthPack: {fileID: 0}
 --- !u!82 &6982812147933622152
 AudioSource:

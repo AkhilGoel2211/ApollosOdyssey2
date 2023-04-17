@@ -24,6 +24,7 @@ public class CameraToggle : MonoBehaviour
 
     private AudioSource playerAudioSource;
     [SerializeField] private AudioClip blasterSoundEffect;
+    [SerializeField] private AudioClip emptyGunClick;
 
     private void Awake()
     {
@@ -87,10 +88,16 @@ public class CameraToggle : MonoBehaviour
 
         if (starterAssetsInputs.shoot)
         {
-            Vector3 aimDir = (mouse3DPosition - bulletSpawnPoint.position).normalized;
-            Instantiate(bulletObject, bulletSpawnPoint.position, Quaternion.LookRotation(aimDir,Vector3.up));
+            if(playerInventory.currentAmo > 0)
+            {
+                Vector3 aimDir = (mouse3DPosition - bulletSpawnPoint.position).normalized;
+                Instantiate(bulletObject, bulletSpawnPoint.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                playerAudioSource.PlayOneShot(blasterSoundEffect);
+                playerInventory.DecrementAmmo();
+            }else{
+                playerAudioSource.PlayOneShot(emptyGunClick);
+            }
             starterAssetsInputs.shoot = false;
-            playerAudioSource.PlayOneShot(blasterSoundEffect);
         }
 
         if (starterAssetsInputs.medpack)
@@ -107,18 +114,6 @@ public class CameraToggle : MonoBehaviour
                 playerInventory.DecrementHealthPacksCollected();   
             }
             starterAssetsInputs.medpack = false;
-        }
-
-        if (starterAssetsInputs.powerup)
-        {
-            if (playerInventory.superPowerUp > 0)
-            {
-                DisplayMainMessage("Power Up Active");
-                //Whatever functionality we want for the power up
-                playerInventory.DecrementSuperPowerUp();
-                
-            }
-            starterAssetsInputs.powerup = false;
         }
     }
 

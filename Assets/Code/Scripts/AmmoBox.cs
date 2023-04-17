@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class medkit : MonoBehaviour
+public class AmmoBox : MonoBehaviour
 {
     private AudioSource terrianAudio;
-    [SerializeField] private AudioClip equipMedkit;
+    [SerializeField] private AudioClip equipAmmo;
 
-    void Start()
+     void Start()
     {
         terrianAudio = GameObject.Find("Terrain").GetComponent<AudioSource>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
         if (playerInventory)
         {
-            terrianAudio.PlayOneShot(equipMedkit);
-            playerInventory.IncrementHealthPacksCollected();
+            terrianAudio.PlayOneShot(equipAmmo);
+            playerInventory.IncrementAmmo();
             Destroy(gameObject);
         }
     }

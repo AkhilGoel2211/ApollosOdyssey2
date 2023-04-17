@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class PlayerInventory : MonoBehaviour
 {
     public int healthPacksCollected;
-    public int superPowerUp;
+    public int currentAmo = 50;
     [SerializeField] public Text healthPackText;
-    [SerializeField] public Text superPowerUpText;
+    [SerializeField] public Text AmmoText;
     private AudioSource playerAudio;
     [SerializeField] private AudioClip equipHealthPack;
 
@@ -23,14 +23,14 @@ public class PlayerInventory : MonoBehaviour
         healthPacksCollected -= 1;
     }
 
-    public void IncrementSuperPowerUp()
+    public void IncrementAmmo()
     {
-        superPowerUp += 1;
+        currentAmo += Random.Range(30, 81);
     }
 
-    public void DecrementSuperPowerUp()
+    public void DecrementAmmo()
     {
-        superPowerUp -= 1;
+        currentAmo -= 1;
     }
 
     public void RefreshHealthPacks()
@@ -38,15 +38,15 @@ public class PlayerInventory : MonoBehaviour
         healthPackText.text = "X " + healthPacksCollected.ToString();
     }
 
-    public void RefreshSuperPowerUpText()
+    public void RefreshAmmoText()
     {
-        superPowerUpText.text = "X" + superPowerUp.ToString();
+        AmmoText.text = "X " + currentAmo.ToString();
     }
 
     void Update()
     {
         RefreshHealthPacks();
-        RefreshSuperPowerUpText();
+        RefreshAmmoText();
     }
 
     private void Start()
