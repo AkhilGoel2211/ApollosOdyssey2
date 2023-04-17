@@ -22,6 +22,9 @@ public class CameraToggle : MonoBehaviour
     private PlayerInventory playerInventory;
     [SerializeField] private Text mainMessages;
 
+    private AudioSource playerAudioSource;
+    [SerializeField] private AudioClip blasterSoundEffect;
+
     private void Awake()
     {
         thirdPersonController = GetComponent<ThirdPersonController>();
@@ -33,7 +36,7 @@ public class CameraToggle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -87,6 +90,7 @@ public class CameraToggle : MonoBehaviour
             Vector3 aimDir = (mouse3DPosition - bulletSpawnPoint.position).normalized;
             Instantiate(bulletObject, bulletSpawnPoint.position, Quaternion.LookRotation(aimDir,Vector3.up));
             starterAssetsInputs.shoot = false;
+            playerAudioSource.PlayOneShot(blasterSoundEffect);
         }
 
         if (starterAssetsInputs.medpack)

@@ -8,6 +8,7 @@ public class bulletControl : MonoBehaviour
     private Rigidbody bulletBody;
     [SerializeField] float bulletSpeed;
     [SerializeField] private Transform vfxcollision;
+
     private int damage = -25;
 
     private void Awake()
@@ -18,6 +19,7 @@ public class bulletControl : MonoBehaviour
     private void Start()
     {
         bulletBody.velocity = transform.forward * bulletSpeed;
+
     }
     private void OnTriggerEnter(Collider otherBody)
     {

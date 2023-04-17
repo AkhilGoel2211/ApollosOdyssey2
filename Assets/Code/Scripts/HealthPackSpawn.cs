@@ -6,7 +6,7 @@ public class HealthPackSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject healthPack;
     private GameObject player;
-    private float defaultFloatHeight = 2f;
+    private float defaultFloatHeight = 0.5f;
     private int SpawnCount;
     private float lastspawnTime;
     private float deltaTime = 15f;
@@ -21,6 +21,7 @@ public class HealthPackSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(landscape.SampleHeight(player.GetComponent<Transform>().position) + landscape.transform.position.y);
         PlayerHealth health = player.GetComponent<PlayerHealth>();
         if (health.currentHealth < 50)
         {
@@ -39,11 +40,10 @@ public class HealthPackSpawn : MonoBehaviour
 
     private Vector3 generateHealthPackSpawnPoint()
     {
-        var randomPos = (Vector3)Random.insideUnitCircle * 2;
+        var randomPos = (Vector3)Random.insideUnitCircle * 4;
         randomPos += player.GetComponent<Transform>().position;
-        randomPos.y = landscape.SampleHeight(transform.position) + defaultFloatHeight;
+        randomPos.y = landscape.SampleHeight(transform.position) + landscape.transform.position.y;
         SpawnCount++;
-        Debug.Log("Med Pack created at  : (x,y,z) = " + randomPos.x.ToString() +  randomPos.y.ToString() + randomPos.z.ToString());
         return randomPos;
     }
     

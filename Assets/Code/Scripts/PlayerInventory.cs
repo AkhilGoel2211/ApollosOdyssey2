@@ -9,9 +9,12 @@ public class PlayerInventory : MonoBehaviour
     public int superPowerUp;
     [SerializeField] public Text healthPackText;
     [SerializeField] public Text superPowerUpText;
-    
+    private AudioSource playerAudio;
+    [SerializeField] private AudioClip equipHealthPack;
 
     public void IncrementHealthPacksCollected() {
+
+        playerAudio.PlayOneShot(equipHealthPack);
         healthPacksCollected += 1;
     }
 
@@ -44,5 +47,10 @@ public class PlayerInventory : MonoBehaviour
     {
         RefreshHealthPacks();
         RefreshSuperPowerUpText();
+    }
+
+    private void Start()
+    {
+        playerAudio = GetComponent<AudioSource>();
     }
 }

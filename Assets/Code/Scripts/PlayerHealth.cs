@@ -10,12 +10,15 @@ public class PlayerHealth : MonoBehaviour
 	private float timeOfLastRadiation;
 	private float radiationDelta = 60 * 7;
 	public HealthBar healthBar;
+	private AudioSource playerAudioSource;
+	[SerializeField] private AudioClip radiationSoundEffect;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+		playerAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
         {
 			currentHealth -= 20;
 			timeOfLastRadiation = Time.time;
+			playerAudioSource.PlayOneShot(radiationSoundEffect);
         }
     }
 

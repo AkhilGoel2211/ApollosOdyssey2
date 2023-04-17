@@ -7,11 +7,14 @@ public class EnemyHealth : MonoBehaviour
     public int curHealth = 100;
     [SerializeField] private Slider enemyHealthBar;
     private Transform player;
+    private AudioSource terrianAudio;
+    [SerializeField] private AudioClip enemyDeathSound;
     // Use this for initialization
     void Start()
     {
         enemyHealthBar.value = maxHealth;
         player = GameObject.Find("PlayerArmature").GetComponent<Transform>();
+        terrianAudio = GameObject.Find("Terrain").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class EnemyHealth : MonoBehaviour
         curHealth += adj;
         if (curHealth <= 0)
         {
+            terrianAudio.PlayOneShot(enemyDeathSound);
             PlayerScore score = player.GetComponent<PlayerScore>();
             score.incrementKills();
             Destroy(gameObject);
