@@ -8,6 +8,7 @@ public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverMenu;
 	public Slider slider;
+    public bool gameOver = false;
 
     void Start()
     {
