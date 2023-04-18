@@ -12,6 +12,7 @@ public class GameOverMenu : MonoBehaviour
     [SerializeField] private GameObject leaderboardEntry;
     void OnEnable()
     {
+        Time.timeScale = 0f;
         Debug.Log("Logging current max scores : ");
         scoreManager = GameObject.Find("Terrain").GetComponent<LeaderboardManager>();
         leaderBoardTitle = GameObject.Find("Entries");
