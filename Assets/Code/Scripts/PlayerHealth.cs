@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
 			currentHealth = 0;
             if (!scoreAdded)
             {
-				scoreManager.AddScore(playerScore.getKills());
+				scoreManager.AddScore(playerScore.getPlayerScore());
 				scoreAdded = true;
 			}
 			gameOverMenu.SetActive(true);
