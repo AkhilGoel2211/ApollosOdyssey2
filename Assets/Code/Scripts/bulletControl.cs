@@ -48,11 +48,11 @@ public class bulletControl : MonoBehaviour
     {
         if (bullet.y - terrain.y >= 1.25)
         {
-            messageScript.AddToQueue("Headshot :P");
+            playerScore.Headshot();
         }
         else
         {
-            messageScript.AddToQueue("Bodyshot :)");
+            playerScore.Bodyshot();
         }
     }
 }
