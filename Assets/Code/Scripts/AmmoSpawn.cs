@@ -9,7 +9,7 @@ public class AmmoSpawn : MonoBehaviour
     private GameObject player;
     private float defaultFloatHeight = 1f;
     private float lastspawnTime;
-    private float deltaTime = 25f;
+    private float deltaTime = 15f;
     [SerializeField] Terrain landscape;
     private PlayerInventory inventory;
     // Start is called before the first frame update
