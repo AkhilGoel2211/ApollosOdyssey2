@@ -22,14 +22,17 @@ public class LeaderboardManager : MonoBehaviour
         // Check if the JSON file exists
         if (File.Exists(filePath))
         {
+            
             // Read the contents of the file
             string json = File.ReadAllText(filePath);
 
             // Deserialize the JSON data into a list of LeaderboardEntry objects
             leaderboardEntries = JsonUtility.FromJson<List<LeaderboardEntry>>(json);
+            Debug.Log("Found old file, using : " + leaderboardEntries.Count.ToString());
         }
         else
         {
+            Debug.Log("Creating empty, file does not exist");
             // If the file does not exist, create a new empty list of leaderboard entries
             leaderboardEntries = new List<LeaderboardEntry>();
         }
@@ -61,6 +64,7 @@ public class LeaderboardManager : MonoBehaviour
             leaderboardEntries.RemoveRange(10, leaderboardEntries.Count - 10);
         }
 
+        Debug.Log("After addition contains : " +  leaderboardEntries.Count.ToString());
         // Save the updated leaderboard entries to the JSON file
         SaveLeaderboardEntries();
     }

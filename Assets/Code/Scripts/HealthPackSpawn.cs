@@ -26,8 +26,6 @@ public class HealthPackSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(landscape.SampleHeight(player.GetComponent<Transform>().position) + landscape.transform.position.y);
-        
         if (health.currentHealth < 50 && inventory.healthPacksCollected == 0)
         {
             if(Time.time > lastspawnTime + deltaTime)

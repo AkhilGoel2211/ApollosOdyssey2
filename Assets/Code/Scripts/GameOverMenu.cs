@@ -6,11 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-
-    void Start()
+    private LeaderboardManager scoreManager;
+    void OnEnable()
     {
-      
+        Debug.Log("Logging current max scores : ");
+        scoreManager = GameObject.Find("Terrain").GetComponent<LeaderboardManager>();
+        List<LeaderboardEntry> leaderBoardEntries = scoreManager.GetTopScores();
+        Debug.Log("Leaderboard items : " + leaderBoardEntries.Count.ToString());
+        for (int i = 0; i < leaderBoardEntries.Count; i++)
+        {
+            Debug.Log(leaderBoardEntries[i].score.ToString() + " : " + i.ToString());
+        }
     }
+    //void Start()
+    //{
+        
+    //}
 
     void Update() 
     {

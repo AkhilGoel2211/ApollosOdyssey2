@@ -9030,6 +9030,7 @@ MonoBehaviour:
   currentHealth: 50
   healthBar: {fileID: 958412308}
   radiationSoundEffect: {fileID: 8300000, guid: 7e7965ea63c954007a6f26870e7e3e7d, type: 3}
+  gameOverMenu: {fileID: 1323191818}
 --- !u!114 &6982812147933622150
 MonoBehaviour:
   m_ObjectHideFlags: 0

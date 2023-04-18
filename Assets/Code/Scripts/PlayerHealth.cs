@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 	private LeaderboardManager scoreManager;
 	private PlayerScore playerScore;
 	[SerializeField] private GameObject gameOverMenu;
+	private bool scoreAdded = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -30,11 +31,14 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		//Display menu or leaderboard here
 		if(currentHealth <= 0)
         {
 			currentHealth = 0;
-			scoreManager.AddScore(playerScore.getKills());
+            if (!scoreAdded)
+            {
+				scoreManager.AddScore(playerScore.getKills());
+				scoreAdded = true;
+			}
 			gameOverMenu.SetActive(true);
         }
 
