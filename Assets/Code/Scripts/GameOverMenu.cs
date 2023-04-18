@@ -7,35 +7,39 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverMenu;
-	public Slider slider;
-    public static bool gameOver = false;
+
+    private void OnEnable() 
+    {
+        PlayerHealth.OnPlayerDeath += EnableGameOverMenu;
+    }
+ 
+    private void OnDisable() 
+    {
+        PlayerHealth.OnPlayerDeath -= EnableGameOverMenu;
+    }
 
     void Start()
     {
-        gameOverMenu.SetActive(gameOver);
+        gameOverMenu.SetActive(false);
     }
 
     void Update() 
     {
-        if (gameOver && gameOverMenu != null)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        } 
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        // if (gameOverMenu != null)
+        // {
+        //     Cursor.lockState = CursorLockMode.None;
+        //     Cursor.visible = true;
+        // } 
+        // else
+        // {
+        //     Cursor.lockState = CursorLockMode.Locked;
+        //     Cursor.visible = false;
+        // }
+    }
 
-        if (slider.value == 0)
-        {
-            gameOverMenu.SetActive(true);
-        }
-        else
-        {
-            gameOverMenu.SetActive(false);
-        }
+    public void EnableGameOverMenu()
+    {
+        gameOverMenu.SetActive(true);
     }
 
     public void RestartGame()

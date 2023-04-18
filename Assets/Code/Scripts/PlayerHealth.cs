@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+	public static event Action OnPlayerDeath;
 	public int maxHealth = 100;
 	public int currentHealth;
 	private float timeOfLastRadiation;
@@ -33,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         {
 			currentHealth = 0;
 			scoreManager.AddScore(playerScore.getKills());
+			OnPlayerDeath?.Invoke(); 
         }
 
 		if(Time.time > timeOfLastRadiation + radiationDelta)
