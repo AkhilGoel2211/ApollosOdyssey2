@@ -28,4 +28,9 @@ public class PlayerScore : MonoBehaviour
     {
         counterText.text = killCount.ToString();
     }
+
+    public int getKills()
+    {
+        return killCount;
+    }
 }

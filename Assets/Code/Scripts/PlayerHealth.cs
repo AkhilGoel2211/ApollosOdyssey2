@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
 	public HealthBar healthBar;
 	private AudioSource playerAudioSource;
 	[SerializeField] private AudioClip radiationSoundEffect;
+	private LeaderboardManager scoreManager;
+	private PlayerScore playerScore;
 
 	// Start is called before the first frame update
 	void Start()
@@ -19,15 +21,18 @@ public class PlayerHealth : MonoBehaviour
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
 		playerAudioSource = GetComponent<AudioSource>();
+		scoreManager = GameObject.Find("Terrain").GetComponent<LeaderboardManager>();
+		playerScore = GetComponent<PlayerScore>();
     }
 
     // Update is called once per frame
     void Update()
     {
-	
+		//Display menu or leaderboard here
 		if(currentHealth <= 0)
         {
 			currentHealth = 0;
+			scoreManager.AddScore(playerScore.getKills());
         }
 
 		if(Time.time > timeOfLastRadiation + radiationDelta)
