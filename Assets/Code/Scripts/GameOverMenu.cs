@@ -8,15 +8,26 @@ public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverMenu;
 	public Slider slider;
-    public bool gameOver = false;
+    public static bool gameOver = false;
 
     void Start()
     {
-        gameOverMenu.SetActive(false);
+        gameOverMenu.SetActive(gameOver);
     }
 
     void Update() 
     {
+        if (gameOver && gameOverMenu != null)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        } 
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         if (slider.value == 0)
         {
             gameOverMenu.SetActive(true);
@@ -29,6 +40,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 

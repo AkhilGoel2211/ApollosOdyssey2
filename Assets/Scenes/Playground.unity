@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.025252314, g: 0.054982007, b: 0.11085914, a: 1}
+  m_IndirectSpecularColor: {r: 0.029152133, g: 0.06444553, b: 0.12695043, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -190,9 +190,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.41006586, g: 0.6173211, b: 0.9150943, a: 0.09411765}
-    m_HighlightedColor: {r: 0.39607847, g: 0.5882353, b: 0.87843144, a: 0.5882353}
-    m_PressedColor: {r: 0.39607847, g: 0.5882353, b: 0.87843144, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.033018887, g: 0.41503614, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.114498615, b: 1, a: 1}
+    m_SelectedColor: {r: 0.03137255, g: 0.4156863, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1781,7 +1781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 836828116}
-  isPaused: 0
 --- !u!1 &874605735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,7 +2910,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 836828116}
-  isPaused: 0
 --- !u!114 &1056524491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3456,9 +3454,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.41006586, g: 0.6173211, b: 0.9150943, a: 0.09411765}
-    m_HighlightedColor: {r: 0.39607847, g: 0.5882353, b: 0.87843144, a: 0.5882353}
-    m_PressedColor: {r: 0.39607847, g: 0.5882353, b: 0.87843144, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.033018887, g: 0.41503614, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.114498615, b: 1, a: 1}
+    m_SelectedColor: {r: 0.03137255, g: 0.4156863, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3590,9 +3588,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.41006586, g: 0.6173211, b: 0.9150943, a: 0.09411765}
-    m_HighlightedColor: {r: 0.39607847, g: 0.5882353, b: 0.87843144, a: 0.5882353}
-    m_PressedColor: {r: 0.39607847, g: 0.5882353, b: 0.87843144, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.033018887, g: 0.41503614, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.114498615, b: 1, a: 1}
+    m_SelectedColor: {r: 0.03137255, g: 0.4156863, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3719,6 +3717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 1323191818}
   slider: {fileID: 958412307}
+  gameOver: 0
 --- !u!114 &1323191821
 MonoBehaviour:
   m_ObjectHideFlags: 0
