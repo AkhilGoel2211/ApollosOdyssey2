@@ -43,8 +43,16 @@ public class EnemySpawner : MonoBehaviour
             {
                 // Spawn an enemy
                 var randomSpawnPoint = (Vector3)Random.insideUnitCircle * 50;
+                if (randomSpawnPoint.z <= 140.1222 && randomSpawnPoint.z >= -106.3778 && randomSpawnPoint.x <= 144.5722 && randomSpawnPoint.x >= -102.7278)
+                {
+                    randomSpawnPoint = randomSpawnPoint;
+                    randomSpawnPoint += player.position;
+                }
+                else
+                {
+                    randomSpawnPoint = landscape.transform.position;
+                }
                 // Vector3 randomSpawnPoint = new Vector3(Random.Range(-4f, 8f), 0f, Random.Range(0f, 4f));
-                randomSpawnPoint += player.position;
                 randomSpawnPoint.y = landscape.SampleHeight(randomSpawnPoint) + landscape.transform.position.y;
                 GameObject enemy = Instantiate(enemyPrefab, randomSpawnPoint, Quaternion.identity);
                 enemiesSpawned++;
