@@ -19,6 +19,8 @@ public class medkit : MonoBehaviour
             terrianAudio.PlayOneShot(equipMedkit);
             playerInventory.IncrementHealthPacksCollected();
             Destroy(gameObject);
+            var popup = new PopupMessage();
+            popup.AddToQueue("Medkit Collected! Press e to activate");
         }
     }
 }
