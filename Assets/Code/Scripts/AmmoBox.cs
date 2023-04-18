@@ -6,10 +6,12 @@ public class AmmoBox : MonoBehaviour
 {
     private AudioSource terrianAudio;
     [SerializeField] private AudioClip equipAmmo;
+    private PopupMessage messageScript;
 
      void Start()
     {
         terrianAudio = GameObject.Find("Terrain").GetComponent<AudioSource>();
+        messageScript = GameObject.Find("Popup").GetComponent<PopupMessage>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,6 +22,7 @@ public class AmmoBox : MonoBehaviour
             terrianAudio.PlayOneShot(equipAmmo);
             playerInventory.IncrementAmmo();
             Destroy(gameObject);
+            messageScript.AddToQueue("Ammo Collected!");
         }
     }
 }
