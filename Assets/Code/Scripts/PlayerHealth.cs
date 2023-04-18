@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
 	[SerializeField] private AudioClip radiationSoundEffect;
 	private LeaderboardManager scoreManager;
 	private PlayerScore playerScore;
+	[SerializeField] private GameObject gameOverMenu;
 
 	// Start is called before the first frame update
 	void Start()
@@ -34,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         {
 			currentHealth = 0;
 			scoreManager.AddScore(playerScore.getKills());
-			OnPlayerDeath?.Invoke(); 
+			gameOverMenu.SetActive(true);
         }
 
 		if(Time.time > timeOfLastRadiation + radiationDelta)

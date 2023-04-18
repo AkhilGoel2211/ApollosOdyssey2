@@ -6,21 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    public GameObject gameOverMenu;
-
-    private void OnEnable() 
-    {
-        PlayerHealth.OnPlayerDeath += EnableGameOverMenu;
-    }
- 
-    private void OnDisable() 
-    {
-        PlayerHealth.OnPlayerDeath -= EnableGameOverMenu;
-    }
 
     void Start()
     {
-        gameOverMenu.SetActive(false);
+      
     }
 
     void Update() 
@@ -35,11 +24,6 @@ public class GameOverMenu : MonoBehaviour
         //     Cursor.lockState = CursorLockMode.Locked;
         //     Cursor.visible = false;
         // }
-    }
-
-    public void EnableGameOverMenu()
-    {
-        gameOverMenu.SetActive(true);
     }
 
     public void RestartGame()
