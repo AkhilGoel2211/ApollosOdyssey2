@@ -8,6 +8,7 @@ public class bulletControl : MonoBehaviour
     private Rigidbody bulletBody;
     [SerializeField] float bulletSpeed;
     [SerializeField] private Transform vfxcollision;
+    private Terrain landscape;
 
     private int damage = -25;
 

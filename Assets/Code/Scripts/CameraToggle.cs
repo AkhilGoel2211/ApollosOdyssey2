@@ -87,7 +87,7 @@ public class CameraToggle : MonoBehaviour
                 animator.SetLayerWeight(1, 0f);
             }
 
-            if (starterAssetsInputs.shoot)
+            if (starterAssetsInputs.shoot && starterAssetsInputs.aim)
             {
                 if(playerInventory.currentAmo > 0)
                 {

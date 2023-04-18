@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 619e305f5165a9946b7f72464e44ca4a, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.025252314, g: 0.054982007, b: 0.11085914, a: 1}
+  m_IndirectSpecularColor: {r: 0.027831066, g: 0.051597927, b: 0.065077685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1706,7 +1706,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 836828116}
-  isPaused: 0
 --- !u!1 &928196625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,7 +2502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 836828116}
-  isPaused: 0
 --- !u!114 &1056524491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3260,7 +3258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1323191819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3297,8 +3295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5372646aa54834bd081772eebd9a59f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverMenu: {fileID: 1323191818}
-  slider: {fileID: 958412307}
 --- !u!114 &1323191821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6779,6 +6775,7 @@ MonoBehaviour:
   currentHealth: 50
   healthBar: {fileID: 958412308}
   radiationSoundEffect: {fileID: 8300000, guid: 7e7965ea63c954007a6f26870e7e3e7d, type: 3}
+  gameOverMenu: {fileID: 0}
 --- !u!114 &6982812147933622150
 MonoBehaviour:
   m_ObjectHideFlags: 0
